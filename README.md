@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Branch „with-api-gateway“
 
-Things you may want to cover:
+This branch experiments with auto-requiring files in [`app/config/initializers/services.rb`](app/config/initializers/services.rb)
 
-* Ruby version
+This gives every service in [`app/services`](app/services) a chance to register their routes at the inner [`Api`](app/api/api.rb) Gateway
 
-* System dependencies
+Unfortunately this messes up code reloading in the `development` enviroment: It seems to be that the above auto-requiring will not be triggered again, leaving the Api gateway empty :-/
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+We'll have look later :)
