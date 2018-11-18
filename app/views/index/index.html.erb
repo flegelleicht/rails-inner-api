@@ -4,3 +4,12 @@
     <li><%= message %></li>
   <% end %>
 </ul>
+<button id="log">Log AJAX request to console</button>
+<script>
+  document.getElementById('log').addEventListener('click', () => {
+    fetch('/ajax/messages')
+      .then(r => r.json())
+      .then(j => console.log(j))
+      .catch(e => console.error(e));
+  })
+</script>

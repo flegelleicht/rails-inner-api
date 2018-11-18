@@ -1,0 +1,7 @@
+<%  resp = { %>
+<%    count: @view_state[:messages].count.to_s, %>
+<%    messages: @view_state[:messages] %>
+<%  } %>
+
+<% # Not sure how to about the raw() here :-/ %>
+<%= raw(resp.to_json) %> 
