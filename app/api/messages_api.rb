@@ -13,7 +13,6 @@ class MessagesApi
       if user && user.fetch(:id, false)
         require 'securerandom'
         (1..10).map {|i| "#{i}: #{SecureRandom.urlsafe_base64}"}
-        [] # FIXME: Just makes the test run for now ;)
       else
         raise [403, "Not authorized"]
       end
