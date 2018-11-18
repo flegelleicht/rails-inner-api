@@ -2,7 +2,7 @@
 
 ## Branch „with-api-gateway“
 
-This branch experiments with auto-requiring files in [`app/config/initializers/services.rb`](app/config/initializers/services.rb)
+This branch experiments with auto-requiring files in [`app/config/initializers/services.rb`](config/initializers/services.rb)
 
 This gives every service in [`app/services`](app/services) a chance to register their routes at the inner [`Api`](app/api/api.rb) Gateway
 
