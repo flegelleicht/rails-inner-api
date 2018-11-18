@@ -22,11 +22,10 @@ class MessagesApiTest < ActiveSupport::TestCase
     # Set up user
     user = {id: 42}
     # Set up mock storage for MessagesApi
-    expected_messages = [
-      
-    ]
+    expected_messages = []
+    
     messages = MessagesApi.get('/messages', {user: user}, {} )
-    # Compare result
-    assert_equal(messages, expected_messages)
+
+    assert_equal(messages.count, 10)
   end
 end
