@@ -1,6 +1,6 @@
-<h1><%= @viewState.fetch(:greeting) %></h1>
+<h1><%= @view_state.fetch(:greeting) %></h1>
 <ul>
-  <% @viewState.fetch(:messages, []).each do |message| %>
+  <% @view_state.fetch(:messages, []).each do |message| %>
     <li><%= message %></li>
   <% end %>
 </ul>
