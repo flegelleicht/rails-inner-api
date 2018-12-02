@@ -1,13 +1,18 @@
 class IndexController < ApplicationController
-  def initialize
-    # Pull dependencies to *Api classes here, maybe?
-    # Like Env.classForName('MessagesApi')
-  end
-  
+  # index
+  # 
+  # @return [IndexViewModel]
   def index
-    @view_state = {
-      greeting: 'Hello.', #MessagesApi.get('/greeting', {name: 'Hans'}),
-      messages: Api.get('/messages', {user: {id: 42}})
-    }
+    response = Api::HeadlinesForOverview.get({user: 12})
+    view_model = IndexViewModel.from_response(response)
+  end
+
+  class IndexViewModel
+    attr_accessor :headlines
+    def self.from_response(response)
+      result = self.new
+      result.headlines = response.headlines
+      result
+    end
   end
 end
