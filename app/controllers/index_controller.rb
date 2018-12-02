@@ -6,8 +6,8 @@ class IndexController < ApplicationController
   
   def index
     @view_state = {
-      greeting: MessagesApi.get('/greeting', {name: 'Hans'}),
-      messages: MessagesApi.get('/messages', {user: {id: 42}})
+      greeting: 'Hello.', #MessagesApi.get('/greeting', {name: 'Hans'}),
+      messages: Api.get('/messages', {user: {id: 42}})
     }
   end
 end
